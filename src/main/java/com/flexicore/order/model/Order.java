@@ -2,8 +2,10 @@ package com.flexicore.order.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.flexicore.model.Baseclass;
+import com.flexicore.organization.model.Organization;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +18,9 @@ public class Order extends Baseclass {
         return s_Singleton;
     }
     private String externalId;
+
+    @ManyToOne(targetEntity = Organization.class)
+    private Organization organization;
 
     @OneToMany(targetEntity = OrderItem.class,mappedBy = "order")
     @JsonIgnore
@@ -38,6 +43,16 @@ public class Order extends Baseclass {
 
     public <T extends Order> T setExternalId(String externalId) {
         this.externalId = externalId;
+        return (T) this;
+    }
+
+    @ManyToOne(targetEntity = Organization.class)
+    public Organization getOrganization() {
+        return organization;
+    }
+
+    public <T extends Order> T setOrganization(Organization organization) {
+        this.organization = organization;
         return (T) this;
     }
 }
