@@ -13,6 +13,32 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <version.eclipselink>2.7.1</version.eclipselink>
     </properties>
+    <distributionManagement>
+        <repository>
+            <id>flexicore-local</id>
+            <name>flexicore-local</name>
+            <url>http://138.201.191.203:8083/artifactory/flexicore-local</url>
+
+        </repository>
+    </distributionManagement>
+
+
+    <repositories>
+        <repository>
+            <id>flexicore-local</id>
+            <name>flexicore-local</name>
+            <url>http://138.201.191.203:8083/artifactory/flexicore-local</url>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>flexicore-local</id>
+            <name>flexicore-local</name>
+            <url>http://138.201.191.203:8083/artifactory/flexicore-local</url>
+        </pluginRepository>
+    </pluginRepositories>
+
     <dependencies>
         <dependency>
             <groupId>com.flexicore</groupId>
