@@ -1,5 +1,6 @@
 package com.flexicore.order.model;
 
+import com.flexicore.model.Baseclass;
 import com.flexicore.organization.model.Organization;
 import com.flexicore.product.model.Product;
 
@@ -8,7 +9,7 @@ import javax.persistence.ManyToOne;
 
 
 @Entity
-public class OrderItem extends Organization {
+public class OrderItem extends Baseclass {
     static OrderItem s_Singleton = new OrderItem();
     public static OrderItem s() {
         return s_Singleton;

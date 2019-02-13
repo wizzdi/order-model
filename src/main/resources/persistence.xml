@@ -6,6 +6,7 @@
 
         <class>com.flexicore.order.model.Order</class>
         <class>com.flexicore.order.model.OrderItem</class>
+        <class>com.flexicore.product.model.Product</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
     </persistence-unit>
 
