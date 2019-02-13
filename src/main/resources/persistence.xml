@@ -8,6 +8,7 @@
         <class>com.flexicore.order.model.OrderItem</class>
         <class>com.flexicore.product.model.Product</class>
         <class>com.flexicore.organization.model.Organization</class>
+        <class>com.flexicore.organization.model.Supplier</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
     </persistence-unit>
 
