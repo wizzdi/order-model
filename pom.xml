@@ -92,7 +92,6 @@
         </dependency>
 
 
-        <!--circular-->
         <dependency>
             <groupId>com.flexicore</groupId>
             <artifactId>product-model</artifactId>
