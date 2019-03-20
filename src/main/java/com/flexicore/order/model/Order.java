@@ -8,6 +8,7 @@ import com.flexicore.organization.model.Supplier;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,6 +20,8 @@ public class Order extends Baseclass {
         return s_Singleton;
     }
     private String externalId;
+
+    private LocalDateTime orderDate;
 
     @ManyToOne(targetEntity = Organization.class)
     private Organization consumingOrganization;
@@ -67,6 +70,15 @@ public class Order extends Baseclass {
 
     public <T extends Order> T setSupplier(Supplier supplier) {
         this.supplier = supplier;
+        return (T) this;
+    }
+
+    public LocalDateTime getOrderDate() {
+        return orderDate;
+    }
+
+    public <T extends Order> T setOrderDate(LocalDateTime orderDate) {
+        this.orderDate = orderDate;
         return (T) this;
     }
 }
