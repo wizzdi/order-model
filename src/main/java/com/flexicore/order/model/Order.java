@@ -21,6 +21,7 @@ public class Order extends Baseclass {
     }
     private String externalId;
 
+    private LocalDateTime orderSentDate;
     private LocalDateTime orderDate;
 
     @ManyToOne(targetEntity = Organization.class)
@@ -79,6 +80,15 @@ public class Order extends Baseclass {
 
     public <T extends Order> T setOrderDate(LocalDateTime orderDate) {
         this.orderDate = orderDate;
+        return (T) this;
+    }
+
+    public LocalDateTime getOrderSentDate() {
+        return orderSentDate;
+    }
+
+    public <T extends Order> T setOrderSentDate(LocalDateTime orderSentDate) {
+        this.orderSentDate = orderSentDate;
         return (T) this;
     }
 }
