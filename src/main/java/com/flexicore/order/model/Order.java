@@ -21,6 +21,8 @@ public class Order extends Baseclass {
     }
     private String externalId;
 
+    private int ordinal;
+
     private LocalDateTime orderSentDate;
     private LocalDateTime orderDate;
 
@@ -89,6 +91,15 @@ public class Order extends Baseclass {
 
     public <T extends Order> T setOrderSentDate(LocalDateTime orderSentDate) {
         this.orderSentDate = orderSentDate;
+        return (T) this;
+    }
+
+    public int getOrdinal() {
+        return ordinal;
+    }
+
+    public <T extends Order> T setOrdinal(int ordinal) {
+        this.ordinal = ordinal;
         return (T) this;
     }
 }
