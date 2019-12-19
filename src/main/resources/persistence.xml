@@ -5,6 +5,8 @@
     <persistence-unit name="primary">
 
         <class>com.flexicore.order.model.Order</class>
+        <class>com.flexicore.order.model.OrderApiConfig</class>
+        <class>com.flexicore.order.model.OrderApiConfigToSupplier</class>
         <class>com.flexicore.order.model.OrderItem</class>
         <class>com.flexicore.product.model.Product</class>
         <class>com.flexicore.organization.model.Organization</class>

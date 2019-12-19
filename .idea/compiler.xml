@@ -6,7 +6,7 @@
         <sourceOutputDir name="target/generated-sources/meta-model" />
         <sourceTestOutputDir name="target/generated-sources/apt-test" />
         <outputRelativeToContentRoot value="true" />
-        <option name="eclipselink.persistencexml" value="C:\Users\asaf\IdeaProjects\order-model/src/main/resources/persistence.xml" />
+        <option name="eclipselink.persistencexml" value="C:\WorkSpace\Shekel\backend\order-model/src/main/resources/persistence.xml" />
         <processor name="org.eclipse.persistence.internal.jpa.modelgen.CanonicalModelProcessor" />
         <module name="order-model" />
       </profile>

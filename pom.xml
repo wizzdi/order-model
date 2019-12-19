@@ -6,7 +6,7 @@
 
     <groupId>com.flexicore</groupId>
     <artifactId>order-model</artifactId>
-    <version>1.0.4</version>
+    <version>1.1.0</version>
     <properties>
         <jackson.version>2.9.5</jackson.version>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -18,11 +18,8 @@
             <id>flexicore-local</id>
             <name>flexicore-local</name>
             <url>http://138.201.191.203:8083/artifactory/flexicore-local</url>
-
         </repository>
     </distributionManagement>
-
-
     <repositories>
         <repository>
             <id>flexicore-local</id>
@@ -30,7 +27,6 @@
             <url>http://138.201.191.203:8083/artifactory/flexicore-local</url>
         </repository>
     </repositories>
-
     <pluginRepositories>
         <pluginRepository>
             <id>flexicore-local</id>
@@ -38,12 +34,11 @@
             <url>http://138.201.191.203:8083/artifactory/flexicore-local</url>
         </pluginRepository>
     </pluginRepositories>
-
     <dependencies>
         <dependency>
             <groupId>com.flexicore</groupId>
             <artifactId>FlexiCore</artifactId>
-            <version>2.4.4</version>
+            <version>2.9.5</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -52,31 +47,24 @@
             <version>${jackson.version}</version>
             <scope>provided</scope>
         </dependency>
-
-
         <dependency>
             <groupId>org.eclipse.persistence</groupId>
             <artifactId>eclipselink</artifactId>
             <version>${version.eclipselink}</version>
             <scope>provided</scope>
         </dependency>
-
         <dependency>
             <groupId>org.eclipse.persistence</groupId>
             <artifactId>org.eclipse.persistence.jpa.modelgen.processor</artifactId>
             <version>${version.eclipselink}</version>
             <scope>provided</scope>
         </dependency>
-
-
         <dependency>
             <groupId>javax.enterprise</groupId>
             <artifactId>cdi-api</artifactId>
             <version>2.0</version>
             <scope>provided</scope>
         </dependency>
-
-
         <dependency>
             <groupId>com.flexicore</groupId>
             <artifactId>flexicore-territories-model</artifactId>
@@ -84,21 +72,29 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-
             <groupId>com.flexicore</groupId>
             <artifactId>organization-model</artifactId>
             <version>1.1.1</version>
             <scope>provided</scope>
         </dependency>
-
-
         <dependency>
             <groupId>com.flexicore</groupId>
             <artifactId>product-model</artifactId>
             <version>1.2.2</version>
             <scope>provided</scope>
         </dependency>
-
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>8.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.flexicore</groupId>
+            <artifactId>organization-model</artifactId>
+            <version>1.1.0</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -140,7 +136,6 @@
                     </execution>
                 </executions>
             </plugin>
-
             <plugin>
                 <groupId>org.bsc.maven</groupId>
                 <artifactId>maven-processor-plugin</artifactId>
@@ -152,12 +147,10 @@
                             <goal>process</goal>
                         </goals>
                         <phase>generate-sources</phase>
-
                         <configuration>
                             <compilerArguments>
                                 -Aeclipselink.persistencexml=${project.basedir}/src/main/resources/persistence.xml
                             </compilerArguments>
-
                             <processors>
                                 <processor>
                                     org.eclipse.persistence.internal.jpa.modelgen.CanonicalModelProcessor
@@ -174,8 +167,6 @@
                         <artifactId>org.eclipse.persistence.jpa.modelgen.processor</artifactId>
                         <version>${version.eclipselink}</version>
                     </dependency>
-
-
                 </dependencies>
             </plugin>
             <plugin>
@@ -191,19 +182,13 @@
                         <phase>process-sources</phase>
                     </execution>
                 </executions>
-
             </plugin>
-
-
         </plugins>
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
                 <filtering>true</filtering>
-
             </resource>
         </resources>
     </build>
-
-
 </project>
