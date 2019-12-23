@@ -1,28 +1,29 @@
 package com.flexicore.order.model;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.flexicore.model.Baseclass;
-
+import com.flexicore.organization.model.Supplier;
+import com.flexicore.security.SecurityContext;
 import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import java.util.ArrayList;
-import java.util.List;
-
+import javax.persistence.ManyToOne;
 
 @Entity
 public class OrderApiConfig extends Baseclass {
-    static OrderApiConfig s_Singleton = new OrderApiConfig();
-    public static OrderApiConfig s() {
-        return s_Singleton;
+
+    public OrderApiConfig() {
     }
 
+    public OrderApiConfig(String name, SecurityContext securityContext) {
+        super(name, securityContext);
+    }
+
+    @JsonIgnore
+    @ManyToOne(targetEntity = Supplier.class)
+    private String supplierId;
+    @ManyToOne(targetEntity = Supplier.class)
+    private Supplier supplier;
     private String host;
     private String username;
     private String password;
-
-    @JsonIgnore
-    @OneToMany(targetEntity = OrderApiConfigToSupplier.class,mappedBy = "leftside")
-    private List<OrderApiConfigToSupplier> suppliers=new ArrayList<>();
 
     public String getHost() {
         return host;
@@ -51,12 +52,22 @@ public class OrderApiConfig extends Baseclass {
         return (T) this;
     }
 
-    public List<OrderApiConfigToSupplier> getSuppliers() {
-        return suppliers;
+    @ManyToOne(targetEntity = Supplier.class)
+    public Supplier getSupplier() {
+        return supplier;
     }
 
-    public <T extends OrderApiConfig> T setSuppliers(List<OrderApiConfigToSupplier> suppliers) {
-        this.suppliers = suppliers;
+    public <T extends OrderApiConfig> T setSupplier(Supplier supplier) {
+        this.supplier = supplier;
+        return (T) this;
+    }
+
+    public String getSupplierId() {
+        return supplierId;
+    }
+
+    public <T extends OrderApiConfig> T setSupplierId(String supplierId) {
+        this.supplierId = supplierId;
         return (T) this;
     }
 }
