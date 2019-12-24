@@ -17,7 +17,6 @@ public class OrderApiConfig extends Baseclass {
     }
 
     @JsonIgnore
-    @ManyToOne(targetEntity = Supplier.class)
     private String supplierId;
     @ManyToOne(targetEntity = Supplier.class)
     private Supplier supplier;
