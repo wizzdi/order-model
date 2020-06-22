@@ -8,7 +8,7 @@ import com.flexicore.organization.model.Supplier;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,8 +23,8 @@ public class Order extends Baseclass {
 
     private int ordinal;
 
-    private LocalDateTime orderSentDate;
-    private LocalDateTime orderDate;
+    private OffsetDateTime orderSentDate;
+    private OffsetDateTime orderDate;
 
     @ManyToOne(targetEntity = Organization.class)
     private Organization consumingOrganization;
@@ -76,20 +76,20 @@ public class Order extends Baseclass {
         return (T) this;
     }
 
-    public LocalDateTime getOrderDate() {
+    public OffsetDateTime getOrderDate() {
         return orderDate;
     }
 
-    public <T extends Order> T setOrderDate(LocalDateTime orderDate) {
+    public <T extends Order> T setOrderDate(OffsetDateTime orderDate) {
         this.orderDate = orderDate;
         return (T) this;
     }
 
-    public LocalDateTime getOrderSentDate() {
+    public OffsetDateTime getOrderSentDate() {
         return orderSentDate;
     }
 
-    public <T extends Order> T setOrderSentDate(LocalDateTime orderSentDate) {
+    public <T extends Order> T setOrderSentDate(OffsetDateTime orderSentDate) {
         this.orderSentDate = orderSentDate;
         return (T) this;
     }
