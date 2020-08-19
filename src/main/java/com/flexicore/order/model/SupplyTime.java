@@ -1,6 +1,7 @@
 package com.flexicore.order.model;
 
 import com.flexicore.model.Baseclass;
+import com.flexicore.security.SecurityContext;
 
 import javax.persistence.Entity;
 
@@ -17,6 +18,12 @@ public class SupplyTime extends Baseclass {
     private int minute;
     private int second;
 
+    public SupplyTime() {
+    }
+
+    public SupplyTime(String name, SecurityContext securityContext) {
+        super(name, securityContext);
+    }
 
     public int getDayOfTheWeek() {
         return dayOfTheWeek;

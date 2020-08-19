@@ -3,6 +3,7 @@ package com.flexicore.order.model;
 import com.flexicore.model.Baseclass;
 import com.flexicore.organization.model.Organization;
 import com.flexicore.product.model.Product;
+import com.flexicore.security.SecurityContext;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
@@ -21,6 +22,13 @@ public class OrderItem extends Baseclass {
     private Product product;
     @ManyToOne(targetEntity = Order.class)
     private Order order;
+
+    public OrderItem() {
+    }
+
+    public OrderItem(String name, SecurityContext securityContext) {
+        super(name, securityContext);
+    }
 
     public int getQuantity() {
         return quantity;

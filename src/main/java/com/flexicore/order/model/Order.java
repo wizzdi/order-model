@@ -4,7 +4,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.flexicore.model.Baseclass;
 import com.flexicore.organization.model.Organization;
 import com.flexicore.organization.model.Supplier;
+import com.flexicore.security.SecurityContext;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
@@ -15,15 +17,14 @@ import java.util.List;
 
 @Entity
 public class Order extends Baseclass {
-    static Order s_Singleton = new Order();
-    public static Order s() {
-        return s_Singleton;
-    }
     private String externalId;
 
     private int ordinal;
 
+    @Column(columnDefinition = "timestamp with time zone")
     private OffsetDateTime orderSentDate;
+
+    @Column(columnDefinition = "timestamp with time zone")
     private OffsetDateTime orderDate;
 
     @ManyToOne(targetEntity = Organization.class)
@@ -35,6 +36,13 @@ public class Order extends Baseclass {
     @OneToMany(targetEntity = OrderItem.class,mappedBy = "order")
     @JsonIgnore
     private List<OrderItem> orderItems=new ArrayList<>();
+
+    public Order() {
+    }
+
+    public Order(String name, SecurityContext securityContext) {
+        super(name, securityContext);
+    }
 
     @OneToMany(targetEntity = OrderItem.class,mappedBy = "order")
     @JsonIgnore

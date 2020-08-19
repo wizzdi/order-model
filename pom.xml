@@ -6,12 +6,13 @@
 
     <groupId>com.wizzdi</groupId>
     <artifactId>order-model</artifactId>
-    <version>1.0.5</version>
+    <version>1.0.6</version>
     <properties>
-        <jackson.version>2.9.5</jackson.version>
+        <jackson.version>2.11.0</jackson.version>
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.source>1.8</maven.compiler.source>
-        <version.eclipselink>2.7.5</version.eclipselink>
+        <version.eclipselink>2.7.7</version.eclipselink>
+        <flexicore-api.version>4.0.14</flexicore-api.version>
     </properties>
     <distributionManagement>
         <repository>
@@ -49,7 +50,7 @@
         <dependency>
             <groupId>com.wizzdi</groupId>
             <artifactId>flexicore-api</artifactId>
-            <version>4.0.7</version>
+            <version>${flexicore-api.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
