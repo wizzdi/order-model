@@ -11,10 +11,6 @@ import javax.persistence.ManyToOne;
 
 @Entity
 public class OrderItem extends Baseclass {
-    static OrderItem s_Singleton = new OrderItem();
-    public static OrderItem s() {
-        return s_Singleton;
-    }
 
 
     private int quantity;
