@@ -19,11 +19,8 @@
             <id>flexicore-local</id>
             <name>flexicore-local</name>
             <url>https://artifactory.wizzdi.com/artifactory/flexicore-local</url>
-
         </repository>
     </distributionManagement>
-
-
     <repositories>
         <repository>
             <id>flexicore-local</id>
@@ -31,7 +28,6 @@
             <url>https://artifactory.wizzdi.com/artifactory/flexicore-local</url>
         </repository>
     </repositories>
-
     <pluginRepositories>
         <pluginRepository>
             <id>flexicore-local</id>
@@ -39,7 +35,6 @@
             <url>https://artifactory.wizzdi.com/artifactory/flexicore-local</url>
         </pluginRepository>
     </pluginRepositories>
-
     <dependencies>
         <dependency>
             <groupId>javax</groupId>
@@ -59,23 +54,18 @@
             <version>${jackson.version}</version>
             <scope>provided</scope>
         </dependency>
-
-
         <dependency>
             <groupId>org.eclipse.persistence</groupId>
             <artifactId>eclipselink</artifactId>
             <version>${version.eclipselink}</version>
             <scope>provided</scope>
         </dependency>
-
         <dependency>
             <groupId>org.eclipse.persistence</groupId>
             <artifactId>org.eclipse.persistence.jpa.modelgen.processor</artifactId>
             <version>${version.eclipselink}</version>
             <scope>provided</scope>
         </dependency>
-
-
         <dependency>
             <groupId>com.wizzdi</groupId>
             <artifactId>flexicore-territories-model</artifactId>
@@ -83,23 +73,18 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-
             <groupId>com.wizzdi</groupId>
             <artifactId>organization-model</artifactId>
             <version>1.1.2</version>
             <scope>provided</scope>
         </dependency>
-
-
         <dependency>
             <groupId>com.wizzdi</groupId>
             <artifactId>product-model</artifactId>
             <version>2.0.4</version>
             <scope>provided</scope>
         </dependency>
-
     </dependencies>
-
     <build>
         <plugins>
             <plugin>
@@ -125,7 +110,8 @@
 
                             <minimizeJar>false</minimizeJar>
                             <createDependencyReducedPom>true</createDependencyReducedPom>
-                            <dependencyReducedPomLocation>${java.io.tmpdir}/dependency-reduced-pom.xml</dependencyReducedPomLocation>
+                            <dependencyReducedPomLocation>${java.io.tmpdir}/dependency-reduced-pom.xml
+                            </dependencyReducedPomLocation>
                         </configuration>
                     </execution>
                 </executions>
@@ -163,8 +149,6 @@
                         <artifactId>org.eclipse.persistence.jpa.modelgen.processor</artifactId>
                         <version>${version.eclipselink}</version>
                     </dependency>
-
-
                 </dependencies>
             </plugin>
             <plugin>
@@ -180,19 +164,13 @@
                         <phase>process-sources</phase>
                     </execution>
                 </executions>
-
             </plugin>
-
-
         </plugins>
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
                 <filtering>true</filtering>
-
             </resource>
         </resources>
     </build>
-
-
 </project>
